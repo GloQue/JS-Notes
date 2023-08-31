@@ -1,0 +1,49 @@
+In programming, i - 1 is a common expression used to refer to the index of the previous element in an array or sequence when iterating through it.
+Let's break down what it means and how it's used:
+
+1. Iteration Index (i): When you're looping through an array or sequence using a loop variable like i, the value of i represents the 
+current index of the element you're processing.
+
+2. Previous Index (i - 1): To compare the current element with the previous element, you need to access the element at the previous index, 
+which is i - 1. For example, when i is 0, i - 1 will be -1, which isn't a valid index. However, when i is 1, i - 1 will be 0, which corresponds to the index of the previous element.
+
+Here's an example to illustrate:
+
+
+const arr = [10, 20, 30, 40, 50];
+
+for (let i = 1; i < arr.length; i++) {
+  const currentElement = arr[i];
+  const previousElement = arr[i - 1];
+  console.log(`Current: ${currentElement}, Previous: ${previousElement}`);
+}
+
+this outputs the code below
+Current: 20, Previous: 10
+Current: 30, Previous: 20
+Current: 40, Previous: 30
+Current: 50, Previous: 40
+
+
+
+ANOTHER EXAMPLE IN ACTION IS AS FOLLOWS
+Take 2 strings s1 and s2 including only letters from a to z. 
+Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+
+function longest(s1, s2) {
+  //your code
+  let merged = s1.concat(s2)
+
+  let sortedMerged = merged.split('').sort()
+  let pushedArr = [sortedMerged[0]]
+  
+  for(let i = 1; i < sortedMerged.length; i++){
+    if(sortedMerged[i] !== sortedMerged[i - 1]){
+      pushedArr.push(sortedMerged[i])
+    }
+  }
+  return pushedArr.join('')
+}
+
+In this example, we want to return a new string without the letters recurring so the code outputs "abcdefklmopqwxy"
