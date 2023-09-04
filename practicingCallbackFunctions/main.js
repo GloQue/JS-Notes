@@ -1,4 +1,4 @@
-//I am going to create a function that takes in another function as a parameter(which is known as a callback function)
+//I am going to create a function that takes in another function as an argument(which is known as a callback function)
 
 function addTwoNumbers(num1, num2){
     return num1 + num2
